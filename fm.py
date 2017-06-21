@@ -64,7 +64,8 @@ class FM():
             wxsum = tf.reduce_sum(wx, 1)
             vecsum = 0
             for f in range(self.num_factors):
-                d = matmul(self.inputs, tf.reshape(self.vectors[f], shape=(self.vectors[f].shape[0].value, 1)))
+                #d = matmul(self.inputs, tf.reshape(self.vectors[f], shape=(self.vectors[f].shape[0].value, 1)))
+                d = tf.multiply(self.inputs, tf.transpose(self.vectors[f]))
                 fsum = tf.reduce_sum(d, 1)
                 fsum_sqr = tf.reduce_sum(tf.pow(d, 2), 1)
 
