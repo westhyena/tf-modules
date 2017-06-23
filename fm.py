@@ -32,7 +32,7 @@ class FM():
     supported_loss = {
         'mse': tf.losses.mean_squared_error,
         'log_loss': tf.losses.log_loss,
-        'hinge_loss ': tf.losses.hinge_loss
+        'hinge_loss': tf.losses.hinge_loss
     }
     
     supported_input_type = ['dense', 'sparse', 'embedding']
